@@ -2,6 +2,7 @@
 import { redirect, useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
 import { createClient } from '../../../utils/supabase/client';
+import SideNav from '@/components/sideNav';
 
 export default function DashboardLayout({
     children,
@@ -21,8 +22,11 @@ export default function DashboardLayout({
     },[])
 
   return (
-    <div>
+    <div className=' flex'>
+      <SideNav/>
+      <div className=' w-full'>
         {children}
+      </div>
     </div>
   )
 }

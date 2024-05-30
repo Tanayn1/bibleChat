@@ -13,8 +13,7 @@ import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 
 const loader = new JSONLoader(
-    "src/data/states.json",
-    ["/state", "/code", "/nickname", "/website", "/admission_date", "/admission_number", "/capital_city", "/capital_url", "/population", "/population_rank", "/constitution_url", "/twitter_url"],
+    "src/data/en_bbe.json",
 );
 
 export const dynamic = 'force-dynamic'
@@ -84,7 +83,9 @@ export async function POST(req: Request) {
         return new StreamingTextResponse(
             stream.pipeThrough(createStreamDataTransformer()),
         );
+        
     } catch (e: any) {
+        console.log(e)
         return Response.json({ error: e.message }, { status: e.status ?? 500 });
     }
 }
