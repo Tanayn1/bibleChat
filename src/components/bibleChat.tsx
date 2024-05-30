@@ -10,8 +10,8 @@ const { messages, input, handleInputChange, handleSubmit } = useChat({
     }
     });
   return (
-    <div className=' flex flex-col h-screen'>
-        <div className=' flex-grow overflow-auto'>
+    <div className=' flex flex-col h-screen w-[600px]'>
+        <div className=' flex-grow overflow-auto no-scrollbar mt-24 '>
             {messages.map((m, index)=>{
             return( 
             <div key={index}>
@@ -20,7 +20,7 @@ const { messages, input, handleInputChange, handleSubmit } = useChat({
                 <div className='chat-header'>
                     AI
                 </div>
-                    <div className=' chat-bubble'>{m.content}</div>
+                    <div className=' chat-bubble max-w-[100x]'>{m.content}</div>
             </div>) : (
             <div className=' chat chat-end'>
                 <div className=' chat-header'>
@@ -32,7 +32,7 @@ const { messages, input, handleInputChange, handleSubmit } = useChat({
                 )
             })}
         </div>
-        <div className=''>
+        <div className=' mt-4'>
             <form onSubmit={handleSubmit} className=' flex' >
                 <input type="text" className=' input input-bordered' value={input} onChange={handleInputChange}  />
                 <button className=' btn' type='submit'>Submit</button>
