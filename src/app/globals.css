@@ -50,3 +50,19 @@
     --ring: 240 4.9% 83.9%;
   }
 }
+
+.fade-mask {
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(10, 10, 11));
+  pointer-events: none;
+}

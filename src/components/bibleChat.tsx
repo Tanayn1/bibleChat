@@ -3,11 +3,12 @@ import React from 'react'
 import { useChat } from "ai/react"
 
 export default function BibleChat() {
-const { messages, input, handleInputChange, handleSubmit } = useChat({
+const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
     api: '/api/chat',
     onError: (e) =>{
         console.log(e)
     }
+    
     });
   return (
     <div className=' flex flex-col h-screen w-[600px]'>
@@ -18,9 +19,9 @@ const { messages, input, handleInputChange, handleSubmit } = useChat({
                     {m.role === 'assistant' ? (
             <div className=' chat chat-start mr-36'>
                 <div className='chat-header'>
-                    AI
+                    Bible
                 </div>
-                    <div className=' chat-bubble max-w-[100x]'>{m.content}</div>
+                    <div className=' chat-bubble max-w-[100x]'>{ isLoading ? <div className=' loading loading-dots loading-xs '></div> : m.content}</div>
             </div>) : (
             <div className=' chat chat-end'>
                 <div className=' chat-header'>

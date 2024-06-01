@@ -1,10 +1,11 @@
-import Dashboard from '@/components/dashboard'
+import SingleChoiceQuiz from '@/components/singleChoiceQuiz'
 import React from 'react'
 
 export default function Page() {
   return (
     <div>
-        <Dashboard/>
+        <SingleChoiceQuiz/>
     </div>
   )
 }
+

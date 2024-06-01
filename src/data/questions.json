@@ -1,0 +1,403 @@
+[
+    {
+      "question": "Who built the ark to survive the Great Flood?",
+      "choices": ["Moses", "Abraham", "Noah", "David"],
+      "correctAnswer": "Noah"
+    },
+    {
+      "question": "Where was Jesus born?",
+      "choices": ["Nazareth", "Jerusalem", "Bethlehem", "Jericho"],
+      "correctAnswer": "Bethlehem"
+    },
+    {
+      "question": "Who was swallowed by a great fish?",
+      "choices": ["Moses", "Elijah", "Jonah", "Daniel"],
+      "correctAnswer": "Jonah"
+    },
+    {
+      "question": "What is the first book of the Bible?",
+      "choices": ["Exodus", "Genesis", "Leviticus", "Numbers"],
+      "correctAnswer": "Genesis"
+    },
+    {
+      "question": "Who was the first man created by God?",
+      "choices": ["Moses", "Adam", "Abraham", "Isaac"],
+      "correctAnswer": "Adam"
+    },
+    {
+      "question": "Who was the first woman created by God?",
+      "choices": ["Sarah", "Eve", "Mary", "Ruth"],
+      "correctAnswer": "Eve"
+    },
+    {
+      "question": "Who led the Israelites out of Egypt?",
+      "choices": ["Joseph", "Moses", "Joshua", "Aaron"],
+      "correctAnswer": "Moses"
+    },
+    {
+      "question": "What did God create on the first day?",
+      "choices": ["The sun", "The moon", "Light", "Animals"],
+      "correctAnswer": "Light"
+    },
+    {
+      "question": "What is the longest book in the Bible?",
+      "choices": ["Psalms", "Genesis", "Isaiah", "Matthew"],
+      "correctAnswer": "Psalms"
+    },
+    {
+      "question": "Who was thrown into the lions' den?",
+      "choices": ["Joseph", "Moses", "Daniel", "David"],
+      "correctAnswer": "Daniel"
+    },
+    {
+      "question": "What is the shortest verse in the Bible?",
+      "choices": ["Jesus wept.", "God is love.", "Rejoice always.", "Pray without ceasing."],
+      "correctAnswer": "Jesus wept."
+    },
+    {
+      "question": "Who was the strongest man in the Bible?",
+      "choices": ["David", "Goliath", "Samson", "Solomon"],
+      "correctAnswer": "Samson"
+    },
+    {
+      "question": "Who was the king of Israel known for his wisdom?",
+      "choices": ["Saul", "David", "Solomon", "Rehoboam"],
+      "correctAnswer": "Solomon"
+    },
+    {
+      "question": "Who was the disciple that betrayed Jesus?",
+      "choices": ["Peter", "John", "Judas Iscariot", "Thomas"],
+      "correctAnswer": "Judas Iscariot"
+    },
+    {
+      "question": "How many plagues did God send upon Egypt?",
+      "choices": ["5", "7", "10", "12"],
+      "correctAnswer": "10"
+    },
+    {
+      "question": "Who was the father of many nations?",
+      "choices": ["Moses", "Noah", "Abraham", "Isaac"],
+      "correctAnswer": "Abraham"
+    },
+    {
+      "question": "What did David use to defeat Goliath?",
+      "choices": ["Sword", "Bow and arrow", "Spear", "Sling and stone"],
+      "correctAnswer": "Sling and stone"
+    },
+    {
+      "question": "Who interpreted Pharaoh's dreams in Egypt?",
+      "choices": ["Moses", "Joseph", "Daniel", "Aaron"],
+      "correctAnswer": "Joseph"
+    },
+    {
+      "question": "What is the last book of the New Testament?",
+      "choices": ["Acts", "Romans", "Revelation", "Hebrews"],
+      "correctAnswer": "Revelation"
+    },
+    {
+      "question": "How many days and nights did Jesus fast in the wilderness?",
+      "choices": ["10", "20", "30", "40"],
+      "correctAnswer": "40"
+    },
+    {
+      "question": "Who denied Jesus three times before the rooster crowed?",
+      "choices": ["John", "Peter", "Thomas", "Judas"],
+      "correctAnswer": "Peter"
+    },
+    {
+      "question": "What type of tree did Zacchaeus climb to see Jesus?",
+      "choices": ["Oak", "Fig", "Sycamore", "Palm"],
+      "correctAnswer": "Sycamore"
+    },
+    {
+      "question": "Who was the first martyr of the Christian faith?",
+      "choices": ["Peter", "Paul", "James", "Stephen"],
+      "correctAnswer": "Stephen"
+    },
+    {
+      "question": "What river did John the Baptist baptize Jesus in?",
+      "choices": ["Nile", "Tigris", "Jordan", "Euphrates"],
+      "correctAnswer": "Jordan"
+    },
+    {
+      "question": "Who is known as the 'weeping prophet'?",
+      "choices": ["Isaiah", "Jeremiah", "Ezekiel", "Hosea"],
+      "correctAnswer": "Jeremiah"
+    },
+    {
+      "question": "How many times did the Israelites march around Jericho before the walls fell?",
+      "choices": ["5", "6", "7", "8"],
+      "correctAnswer": "7"
+    },
+    {
+      "question": "Who received the Ten Commandments from God?",
+      "choices": ["Abraham", "Isaac", "Jacob", "Moses"],
+      "correctAnswer": "Moses"
+    },
+    {
+      "question": "Which book of the Bible is known for its proverbs?",
+      "choices": ["Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon"],
+      "correctAnswer": "Proverbs"
+    },
+    {
+      "question": "What city was destroyed by God because of its wickedness?",
+      "choices": ["Nineveh", "Babylon", "Sodom", "Jericho"],
+      "correctAnswer": "Sodom"
+    },
+    {
+      "question": "Who was the Roman governor who sentenced Jesus to be crucified?",
+      "choices": ["Herod", "Pilate", "Caesar", "Felix"],
+      "correctAnswer": "Pilate"
+    },
+    {
+      "question": "What did Jesus turn water into at the wedding in Cana?",
+      "choices": ["Milk", "Wine", "Juice", "Honey"],
+      "correctAnswer": "Wine"
+    },
+    {
+      "question": "Who was the first person to see Jesus after His resurrection?",
+      "choices": ["Peter", "John", "Mary Magdalene", "Thomas"],
+      "correctAnswer": "Mary Magdalene"
+    },
+    {
+      "question": "What was the occupation of Matthew before he followed Jesus?",
+      "choices": ["Fisherman", "Carpenter", "Tax collector", "Shepherd"],
+      "correctAnswer": "Tax collector"
+    },
+    {
+      "question": "Who wrote the majority of the New Testament letters?",
+      "choices": ["Peter", "John", "Paul", "James"],
+      "correctAnswer": "Paul"
+    },
+    {
+      "question": "In what language was most of the Old Testament written?",
+      "choices": ["Greek", "Aramaic", "Latin", "Hebrew"],
+      "correctAnswer": "Hebrew"
+    },
+    {
+      "question": "Who was thrown into a fiery furnace but was unharmed?",
+      "choices": ["Daniel", "Shadrach, Meshach, and Abednego", "Joseph", "Jonah"],
+      "correctAnswer": "Shadrach, Meshach, and Abednego"
+    },
+    {
+      "question": "What was the name of the garden where Jesus prayed before His arrest?",
+      "choices": ["Eden", "Gethsemane", "Olives", "Golgotha"],
+      "correctAnswer": "Gethsemane"
+    },
+    {
+      "question": "Who was the mother of Samuel, the prophet?",
+      "choices": ["Hannah", "Sarah", "Rachel", "Leah"],
+      "correctAnswer": "Hannah"
+    },
+    {
+      "question": "How many books are there in the Bible?",
+      "choices": ["60", "61", "66", "70"],
+      "correctAnswer": "66"
+    },
+    {
+      "question": "Which apostle was known as the 'beloved disciple'?",
+      "choices": ["Peter", "James", "John", "Andrew"],
+      "correctAnswer": "John"
+    },
+    {
+        "question": "Who was the mother of Jesus?",
+        "choices": ["Martha", "Elizabeth", "Mary", "Rachel"],
+        "correctAnswer": "Mary"
+      },
+      {
+        "question": "What type of bird did Noah send out from the ark to see if the waters had receded?",
+        "choices": ["Raven", "Dove", "Sparrow", "Eagle"],
+        "correctAnswer": "Dove"
+      },
+      {
+        "question": "What was the name of Moses' brother?",
+        "choices": ["Aaron", "Joshua", "Caleb", "Levi"],
+        "correctAnswer": "Aaron"
+      },
+      {
+        "question": "What was the name of the sea that Moses parted?",
+        "choices": ["Dead Sea", "Sea of Galilee", "Red Sea", "Mediterranean Sea"],
+        "correctAnswer": "Red Sea"
+      },
+      {
+        "question": "Who was known for having great patience and suffering in the Old Testament?",
+        "choices": ["Job", "Solomon", "David", "Samuel"],
+        "correctAnswer": "Job"
+      },
+      {
+        "question": "How many sons did Jacob have?",
+        "choices": ["10", "11", "12", "13"],
+        "correctAnswer": "12"
+      },
+      {
+        "question": "Who led the Israelites into the Promised Land?",
+        "choices": ["Moses", "Aaron", "Joshua", "Caleb"],
+        "correctAnswer": "Joshua"
+      },
+      {
+        "question": "What did Jesus feed 5,000 people with?",
+        "choices": ["Five loaves and two fish", "Seven loaves and five fish", "Three loaves and two fish", "Five loaves and five fish"],
+        "correctAnswer": "Five loaves and two fish"
+      },
+      {
+        "question": "Who was the first king of Israel?",
+        "choices": ["David", "Solomon", "Saul", "Samuel"],
+        "correctAnswer": "Saul"
+      },
+      {
+        "question": "Who was the wisest man in the Bible?",
+        "choices": ["David", "Solomon", "Moses", "Samuel"],
+        "correctAnswer": "Solomon"
+      },
+      {
+        "question": "Who wrote the Book of Revelation?",
+        "choices": ["Paul", "Peter", "John", "Luke"],
+        "correctAnswer": "John"
+      },
+      {
+        "question": "What did God use to speak to Moses in the wilderness?",
+        "choices": ["A burning bush", "A pillar of fire", "A cloud", "An angel"],
+        "correctAnswer": "A burning bush"
+      },
+      {
+        "question": "What was the profession of Peter before he followed Jesus?",
+        "choices": ["Fisherman", "Tax collector", "Carpenter", "Shepherd"],
+        "correctAnswer": "Fisherman"
+      },
+      {
+        "question": "Who anointed David as king?",
+        "choices": ["Samuel", "Nathan", "Eli", "Gad"],
+        "correctAnswer": "Samuel"
+      },
+      {
+        "question": "What was the sign of God's covenant with Noah?",
+        "choices": ["Rainbow", "Dove", "Olive branch", "Ark"],
+        "correctAnswer": "Rainbow"
+      },
+      {
+        "question": "Who were the parents of Cain and Abel?",
+        "choices": ["Abraham and Sarah", "Adam and Eve", "Isaac and Rebekah", "Jacob and Leah"],
+        "correctAnswer": "Adam and Eve"
+      },
+      {
+        "question": "Which prophet was taken up to heaven in a whirlwind?",
+        "choices": ["Elijah", "Elisha", "Isaiah", "Jeremiah"],
+        "correctAnswer": "Elijah"
+      },
+      {
+        "question": "What was the first miracle of Jesus?",
+        "choices": ["Healing the blind man", "Walking on water", "Turning water into wine", "Feeding the 5,000"],
+        "correctAnswer": "Turning water into wine"
+      },
+      {
+        "question": "Who cut off a servant's ear during Jesus' arrest?",
+        "choices": ["Peter", "John", "James", "Judas"],
+        "correctAnswer": "Peter"
+      },
+      {
+        "question": "Who was the Roman centurion that acknowledged Jesus as the Son of God at the crucifixion?",
+        "choices": ["Cornelius", "Julius", "Longinus", "Gaius"],
+        "correctAnswer": "Longinus"
+      },
+      {
+        "question": "What book comes after the four Gospels in the New Testament?",
+        "choices": ["Romans", "Acts", "1 Corinthians", "Hebrews"],
+        "correctAnswer": "Acts"
+      },
+      {
+        "question": "Who was the Hebrew woman that became queen of Persia?",
+        "choices": ["Esther", "Ruth", "Deborah", "Miriam"],
+        "correctAnswer": "Esther"
+      },
+      {
+        "question": "What city is known as the City of David?",
+        "choices": ["Bethlehem", "Jerusalem", "Nazareth", "Jericho"],
+        "correctAnswer": "Jerusalem"
+      },
+      {
+        "question": "How many days did it take for God to create the world?",
+        "choices": ["5", "6", "7", "8"],
+        "correctAnswer": "6"
+      },
+      {
+        "question": "Who interpreted the dreams of the king of Babylon?",
+        "choices": ["Joseph", "Daniel", "Ezekiel", "Nehemiah"],
+        "correctAnswer": "Daniel"
+      },
+      {
+        "question": "Who was thrown into the fiery furnace?",
+        "choices": ["Daniel", "Joseph", "Shadrach, Meshach, and Abednego", "Samson"],
+        "correctAnswer": "Shadrach, Meshach, and Abednego"
+      },
+      {
+        "question": "What is the shortest book in the New Testament?",
+        "choices": ["Jude", "2 John", "3 John", "Philemon"],
+        "correctAnswer": "3 John"
+      },
+      {
+        "question": "Who was the father of John the Baptist?",
+        "choices": ["Joseph", "Zechariah", "Jesse", "Jacob"],
+        "correctAnswer": "Zechariah"
+      },
+      {
+        "question": "Who was the wife of Isaac?",
+        "choices": ["Sarah", "Rebekah", "Rachel", "Leah"],
+        "correctAnswer": "Rebekah"
+      },
+      {
+        "question": "Which book contains the story of Samson and Delilah?",
+        "choices": ["Joshua", "Judges", "Ruth", "1 Samuel"],
+        "correctAnswer": "Judges"
+      },
+      {
+        "question": "What did Solomon ask God for?",
+        "choices": ["Riches", "Long life", "Wisdom", "Power"],
+        "correctAnswer": "Wisdom"
+      },
+      {
+        "question": "Who is the author of the majority of the Psalms?",
+        "choices": ["Solomon", "David", "Moses", "Asaph"],
+        "correctAnswer": "David"
+      },
+      {
+        "question": "What was the original language of the New Testament?",
+        "choices": ["Hebrew", "Aramaic", "Greek", "Latin"],
+        "correctAnswer": "Greek"
+      },
+      {
+        "question": "Who was the woman that hid the Israelite spies in Jericho?",
+        "choices": ["Ruth", "Rahab", "Deborah", "Esther"],
+        "correctAnswer": "Rahab"
+      },
+      {
+        "question": "What was the profession of Luke?",
+        "choices": ["Tax collector", "Fisherman", "Physician", "Carpenter"],
+        "correctAnswer": "Physician"
+      },
+      {
+        "question": "Who was chosen to replace Judas Iscariot as a disciple?",
+        "choices": ["Barnabas", "Matthias", "Paul", "Silas"],
+        "correctAnswer": "Matthias"
+      },
+      {
+        "question": "What was Paul's original name?",
+        "choices": ["Saul", "Simon", "Silas", "Stephen"],
+        "correctAnswer": "Saul"
+      },
+      {
+        "question": "Who was the first man to commit murder in the Bible?",
+        "choices": ["Cain", "Abel", "Esau", "Ishmael"],
+        "correctAnswer": "Cain"
+      },
+      {
+        "question": "Which apostle was a tax collector before following Jesus?",
+        "choices": ["James", "John", "Matthew", "Andrew"],
+        "correctAnswer": "Matthew"
+      },
+      {
+        "question": "What was the name of Abraham's wife?",
+        "choices": ["Sarah", "Rebekah", "Rachel", "Leah"],
+        "correctAnswer": "Sarah"
+      }
+  ]
+  
