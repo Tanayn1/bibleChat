@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { createClient } from '../../utils/supabase/client'
+import Link from 'next/link';
 
 export default function AvatarDropdown() {
     const supabase = createClient();
@@ -22,11 +23,11 @@ export default function AvatarDropdown() {
         {intials ? <div className=' dropdown dropdown-left'>
         <div tabIndex={0} role="button" className="avatar placeholder cursor-pointer">
             <div className="bg-neutral text-neutral-content rounded-full w-12 mobile:w-8">
-                <span className="mobile:text-xs">TA</span>
+                <span className="mobile:text-xs">{intials}</span>
             </div>
         </div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Profile</a></li>
+            <Link href={'/dashboard/profile'}><li><a>Profile</a></li></Link>
             <li><a>Log out</a></li>
         </ul>
         </div> : 

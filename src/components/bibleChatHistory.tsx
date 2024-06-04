@@ -7,12 +7,13 @@ import parse from 'html-react-parser';
 import { createClient } from '../../utils/supabase/client';
 import { Message } from 'ai';
 import showdown from 'showdown'
-import PricingModal from './pricingModalChat';
-import PricingModalChat from './pricingModalChat';
+import PricingModal from './pricingModal';
 import { checkChatNum } from '@/functions/functions';
+import PricingModalChat from './pricingModalChat';
 
 
-export default function BibleChat({api, initalMessage} : {api : string, initalMessage : string}) {
+export default function BibleChatHistory({api,  id, messageHistory} : 
+    {api : string,  id: string,  messageHistory : Array<any>}) {
 const supabase = createClient();    
 const [chatSessionID, setChatSessionID] = useState<null | string>(null);
 const [modal, setModal] = useState<boolean>(false);
@@ -22,6 +23,7 @@ const checkChat = async ()=>{
     if (isLimitReached === true) setModal(true)
     setChatCheck(true)
 }
+
 const updateChatSession = async (message : Message)=>{
     if (chatSessionID === null) {
         console.log(input)
@@ -60,16 +62,12 @@ const updateChatSession = async (message : Message)=>{
     }
 }
 
-const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages} = useChat({
     api: api,
     onError: (e) =>{
         console.log(e)
     },
-    initialMessages: [{
-        id: 'start',
-        role: 'assistant',
-        content: initalMessage
-    }],
+    initialMessages: messageHistory,
     onFinish: (message)=>{
         updateChatSession(message);
     }
@@ -90,15 +88,15 @@ const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat(
             chatContainer.current?.scrollTo(0, scrollHeight + 200)
         }
     }
-
+    
+    useEffect(()=>{
+        checkChat();
+        setChatSessionID(id)
+        setMessages(messageHistory)
+    },[])
     useEffect(()=>{
         scroll();
     },[messages])
-
-    useEffect(()=>{
-        checkChat();
-
-    },[])
  if (chatCheck === true) {return (
     <div className=' flex flex-col h-screen w-[600px]'>
         <div ref={chatContainer} className=' flex-grow overflow-auto no-scrollbar mt-24 '>
@@ -140,7 +138,7 @@ const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat(
         </div>
         <PricingModalChat show={modal}/>
     </div>
-  )} else {
+  )}  else {
     return (
         <div className=' flex h-screen justify-center items-center'>
             <div className=' loading loading-spinner loading-md'></div>

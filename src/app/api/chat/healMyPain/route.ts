@@ -12,9 +12,9 @@ import { RunnableSequence, RunnablePassthrough } from '@langchain/core/runnables
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
-import { createClient } from '../../../../utils/supabase/server';
 import { NextResponse } from 'next/server';
 import { StringOutputParser } from "@langchain/core/output_parsers";
+import { createClient } from '../../../../../utils/supabase/server';
 
 
 
@@ -40,7 +40,7 @@ const CONDENSE_QUESTION_PROMPT = PromptTemplate.fromTemplate(
 
 const TEMPLATE = `Answer the user's questions based on the bible verse that is provided, 
 state the bible passage and explain it whilist answering the users question as well as 
-keeping answers very concise and straight to the point.:
+keeping answers very concise and straight to the point:
 ==============================
 Bible passage: {context}
 ==============================
