@@ -29,7 +29,7 @@ export default function QuizQuestion({question, choiceA,
   if (question) {return (
     <div>
       <div>
-        <h1 className=' my-5 text-xl font-semibold'>{question}</h1>
+        <h1 className=' my-5 text-xl font-semibold mobile:text-center'>{question}</h1>
         <div className=' flex flex-col items-center'>
           <div onClick={()=>{handleClick(choiceA)}} className='cursor-pointer my-1  bg-zinc-950 w-[300px] rounded-xl border border-zinc-900 transform transition-transform duration-300 hover:scale-105'>
             <h1 className=' p-7 text-lg text-center'>A. {choiceA}</h1>

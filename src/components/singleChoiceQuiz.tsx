@@ -73,7 +73,7 @@ const selectedQuestions = shuffledQuestions.slice(0, 7);
   }
 
  if (questions) {return (
-    <div className='flex h-screen justify-center items-center  '>
+    <div className='flex h-screen justify-center items-center mobile:mb-20  '>
       <div className="flex flex-col justify-center items-center w-[500px]  overflow-hidden">
         <QuestionTracker questions={questionAnswerState} currentQuestion={currentQuestion.questionNumber}/>
         {currentQuestion && quizOver === false ? <QuizQuestion question={currentQuestion.question} 

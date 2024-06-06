@@ -11,13 +11,27 @@ const config: Config = {
     extend: {
       screens: {
         "mobile": {'min': '360px', 'max': '800px'},
+        "sm" : {'min': '800px', 'max': '1300px'}
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "shine-pulse": {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          to: {
+            "background-position": "0% 0%",
+          },
+        },
     },
+  },
   },
   plugins: [daisyui,
     

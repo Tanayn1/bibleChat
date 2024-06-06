@@ -7,7 +7,7 @@ export default function Page() {
 
   
  return (
-    <div className=' m-10 lg:flex md:flex'>
+    <div className=' m-10 flex justify-center'>
         <ChatHistory/>
     </div>
   )

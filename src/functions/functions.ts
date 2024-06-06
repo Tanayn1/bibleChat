@@ -23,3 +23,18 @@ export async function checkChatNum(supabase : any) {
         }
     }
 }
+
+
+export async function isPlanFree(supabase : any) {
+    const userID = (await supabase.auth.getUser()).data.user?.id;
+    const { data, error } : any = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', userID);
+    if (error) console.log(error);
+    const userPlan = data?.plan;
+    if (userPlan === 'pro') {
+        return false;
+    } 
+    return true
+}

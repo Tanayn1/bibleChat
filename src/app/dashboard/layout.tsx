@@ -21,7 +21,7 @@ export default function DashboardLayout({
         }
     }
     useEffect(()=>{
-        checkUser();
+        //checkUser();
     },[])
 
   return (

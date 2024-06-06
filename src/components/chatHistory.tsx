@@ -34,7 +34,7 @@ export default function ChatHistory() {
         return dd
     }
    return (
-    <div className=' bg-zinc-950 w-[400px] h-[600px] rounded-xl'>
+    <div className=' bg-zinc-950 w-[400px] h-[600px] rounded-xl mobile:h-[500px] mobile:w-[360px]'>
         <h1 className=' text-2xl font-semibold m-3'>Chat History</h1>
         <div className=' h-500px overflow-auto no-scrollbar'>
             {chats ? chats.map((chat)=>{

@@ -41,7 +41,7 @@ export default function PricingModal({setIsShow , show}
     }    
   }
   if (show) {return (
-    <div className=' fixed inset-0 backdrop-blur-lg flex flex-col justify-center items-center'>
+    <div className=' fixed inset-0 backdrop-blur-lg flex flex-col lg:justify-center md:justify-center mobile:z-10 mobile:mt-3 items-center'>
       <div className=' flex flex-col bg-zinc-950 rounded-2xl relative '>
         <button className=' absolute top-2 right-2 z-10  btn w-6 h-6' onClick={()=>{
           setIsShow(false)
@@ -86,7 +86,7 @@ export default function PricingModal({setIsShow , show}
                   <h1 className=' text-xs '>$2.99 per week</h1>
                 </div>
               </div>
-                <div onClick={()=>{setSelected('price_1PNl70K0RW804ljsdujYNcEW')}} className={` ${selected === 'price_1PNl70K0RW804ljsdujYNcEW' ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer border-4 border-yellow-600 flex flex-col items-center mr-7  rounded-xl hover:bg-zinc-800`}>
+                <div onClick={()=>{setSelected('price_1PNl70K0RW804ljsdujYNcEW')}} className={` ${selected === 'price_1PNl70K0RW804ljsdujYNcEW' ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer border-4 border-purple-700 flex flex-col items-center mr-7  rounded-xl hover:bg-zinc-800`}>
                   <div className=' p-4'>
                     <h1 className=' text-md font-semibold text-center'>$59.99</h1>
                     <h1 className=' text-md font-semibold text-center'>Per Year</h1>
@@ -101,7 +101,7 @@ export default function PricingModal({setIsShow , show}
             <h1 className=' text-xs text-center text-gray-300 mt-1'>No Risks, No Charges</h1>
 
           </div>
-          <button onClick={checkout} className=' btn bg-yellow-600 hover:bg-yellow-700 m-4'>{ isLoading ? <div className=' loading loading-dots loading-sm'></div> : 'Try 3 Days Free'}</button>
+          <button onClick={checkout} className=' btn bg-purple-700 hover:bg-purple-800 m-4'>{ isLoading ? <div className=' loading loading-dots loading-sm'></div> : 'Try 3 Days Free'}</button>
       </div>
     </div>
   )} else {

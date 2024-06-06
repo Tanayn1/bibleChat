@@ -8,7 +8,7 @@ import { createClient } from '../../utils/supabase/client';
 import { Message } from 'ai';
 import showdown from 'showdown'
 import PricingModal from './pricingModal';
-import { checkChatNum } from '@/functions/functions';
+import { checkChatNum, isPlanFree } from '@/functions/functions';
 import PricingModalChat from './pricingModalChat';
 
 
@@ -19,8 +19,8 @@ const [chatSessionID, setChatSessionID] = useState<null | string>(null);
 const [modal, setModal] = useState<boolean>(false);
 const [chatCheck, setChatCheck] = useState<boolean>(false)
 const checkChat = async ()=>{
-    const isLimitReached = await checkChatNum(supabase)
-    if (isLimitReached === true) setModal(true)
+    const isOnFreePlan : boolean = await isPlanFree(supabase)
+    setModal(isOnFreePlan)
     setChatCheck(true)
 }
 
@@ -98,7 +98,7 @@ const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages
         scroll();
     },[messages])
  if (chatCheck === true) {return (
-    <div className=' flex flex-col h-screen w-[600px]'>
+    <div className=' flex flex-col h-screen w-[600px] mobile:w-[300px]'>
         <div ref={chatContainer} className=' flex-grow overflow-auto no-scrollbar mt-24 '>
             {messages.map((m, index)=>{
             return( 
@@ -108,7 +108,7 @@ const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages
                 <div className='chat-header'>
                     Bible
                 </div>
-                    <div className=' chat-bubble max-w-[100x]'>{parse(convertMarkdownToHTML(m.content))}</div>
+                    <div className=' chat-bubble max-w-[100x] mobile:max-w-[360px]'>{parse(convertMarkdownToHTML(m.content))}</div>
             </div>) : (
             <div className=' chat chat-end'>
                 <div className=' chat-header'>
@@ -121,10 +121,10 @@ const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages
             })}
         </div>
         <div className=' mt-4'>
-            <div className='  flex items-center justify-center bg-zinc-900 rounded-t-2xl shadow-2xl shadow-slate-800'>
+            <div className='  flex items-center justify-center bg-zinc-900 rounded-t-2xl  mobile:rounded-3xl mobile:shadow-none shadow-2xl shadow-slate-800 mobile:mb-32'>
                 <form onSubmit={handleSubmit} className=' flex' >
                     <ReactTextareaAutosize  
-                    className='  w-[400px] m-6 bg-zinc-900 no-scrollbar resize-none rounded-lg p-2 focus:outline-none' 
+                    className='  w-[400px] mobile:w-[170px] m-6 bg-zinc-900 no-scrollbar resize-none rounded-lg p-2 focus:outline-none' 
                     value={input} 
                     onChange={handleInputChange}
                     autoFocus

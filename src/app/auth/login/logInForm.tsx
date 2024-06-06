@@ -1,16 +1,20 @@
 'use client'
 import React, { useState } from 'react'
 import { login } from '../actions';
+import { useRouter } from 'next/navigation';
+import { createClient } from '../../../../utils/supabase/client';
 
 export default function LogInForm() {
     const [email, setEmail] = useState<null | string>(null);
     const [password, setPassword] = useState<null | string>(null);
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const router = useRouter();
 
-    const handleLogin = ()=>{
+    const handleLogin = async  ()=>{
         setIsLoading(true)
         if (email && password) {
-        login(email, password)
+         login(email, password)
+
         } else {
             alert('Fill Out All Fields')
         }
