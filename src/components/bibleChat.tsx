@@ -12,7 +12,7 @@ import PricingModalChat from './pricingModalChat';
 import { checkChatNum } from '@/functions/functions';
 
 
-export default function BibleChat({api, initalMessage} : {api : string, initalMessage : string}) {
+export default function BibleChat({api, initalMessage, type} : {api : string, initalMessage : string, type : string}) {
 const supabase = createClient();    
 const [chatSessionID, setChatSessionID] = useState<null | string>(null);
 const [modal, setModal] = useState<boolean>(false);
@@ -28,7 +28,8 @@ const updateChatSession = async (message : Message)=>{
         const {data, error} : any = await supabase
         .from('chatSessions')
         .insert({
-            type: api,
+            type: type,
+            api_route: api,
             messages: [...messages,{
                 id: "firstMessage",
                 role: 'user',

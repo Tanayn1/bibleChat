@@ -26,7 +26,7 @@ export default function Page() {
     <div className=' flex h-screen justify-center items-center'>
         {chat ? 
         <BibleChatHistory 
-        api={chat.type}
+        api={chat.api_route}
         messageHistory={chat.messages}
         id={id}
         

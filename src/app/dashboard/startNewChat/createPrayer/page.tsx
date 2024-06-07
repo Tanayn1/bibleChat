@@ -6,7 +6,7 @@ export default function Page() {
 
   return (
     <div className=' flex h-screen justify-center items-center'>
-        <BibleChat api='/api/chat/createPrayer' initalMessage={intialMessage}/> 
+        <BibleChat type='Create My Prayer' api='/api/chat/createPrayer' initalMessage={intialMessage}/> 
     </div>
   )
 }

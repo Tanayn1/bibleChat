@@ -10,12 +10,11 @@ export async function login(email : string, password : string) {
     password: password
   });
   if (error) {
-    alert(error)
-    return;
+    console.log(error)
+    return { error: 'Invalid Login'}
   }
 
   revalidatePath('/dashboard', 'layout')
-
   redirect('/dashboard')
 }
 
@@ -31,8 +30,8 @@ export async function signup(name : string, email : string, password : string, c
   })
 
   if (error) {
-    alert(error)
-    return;
+    console.log(error)
+   
   }
 
   const { user } = data;
@@ -51,4 +50,30 @@ export async function signup(name : string, email : string, password : string, c
  } else {
     alert('passwords do not match')
  }
+}
+
+export async function signInWithGoogle() {
+  const supabase = createClient()
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo:'/dashboard'
+    }
+  })
+}
+
+export async function signUpWithGoogle() {
+  const supabase = createClient()
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo:'/auth/onboarding'
+    }
+  })
+
+  if (data) {
+
+  }
 }

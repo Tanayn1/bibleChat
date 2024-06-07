@@ -1,9 +1,10 @@
 import React from 'react'
 import FiveStars from '../fivestars'
+import Marquee from '../magicui/marquee';
 const testimonials :any = [
     {
       quote:
-        "I used this to prank some of my friends, i have never laughed harder.",
+        "Absolutely love this app! It has brought me closer to the Word of God and strengthened my faith.",
       name: "Tanay Tondare",
       occupation: 'CEO at Precision Labs',
       profilePic: '/431902287_368223219446992_2525287226774476385_n.jpg'
@@ -11,14 +12,14 @@ const testimonials :any = [
     },
     {
       quote:
-        "We used this app to prank many of our subscribers and got some hilarous reactions.",
-      name: "Nelk",
-      occupation: 'Youtuber',
+        "A must-have for every Christian! Holy Harmony has deepened my faith and provided answers to my spiritual questions instantly.",
+      name: "",
+      occupation: '',
       profilePic: '/139829295_485163762474597_3857552590533108128_n.jpg'
   
     },
     {
-      quote: "You can get some really funny reactions with this prank calling app, Highly reccomend this app.",
+      quote: "This app is a blessing! I love how I can explore the Bible and find inspiration whenever I need it.",
       name: "",
       occupation: '',
       profilePic: '/44884218_345707102882519_2446069589734326272_n.jpg'
@@ -26,16 +27,16 @@ const testimonials :any = [
     },
     {
         quote:
-        "I was Pranked! Using this app, it was really funny. I later went on and used this app to prank some of my friends. It is the best decision i have ever made in my life. YOU WILL NOT REGRET USING THIS APP!",
-      name: "Jesse",
-      occupation: 'The Bloke That Got Pranked In The Video',
+        "Holy Harmony has made my daily devotions more meaningful. The instant scripture guidance is truly amazing!",
+      name: "",
+      occupation: '',
       profilePic: '/44884218_345707102882519_2446069589734326272_n.jpg'
 
   
     },
     {
       quote:
-        "Voices are super realistic, your pranks will not sound like AI",
+        "Holy Harmony is a game-changer for my spiritual growth. The easy access to biblical wisdom and the interactive features make it an essential part of my daily routine.",
       name: "",
       occupation: '',
       profilePic: '/44884218_345707102882519_2446069589734326272_n.jpg'
@@ -44,7 +45,7 @@ const testimonials :any = [
     },
     {
         quote:
-          "Really funny prank calls, fully customizable promtps. I had a blast using this app.",
+          "An incredible tool for Bible study. It's like having a spiritual advisor in your pocket!",
         name: "",
         occupation: '',
         profilePic: '/44884218_345707102882519_2446069589734326272_n.jpg'
@@ -56,7 +57,7 @@ const testimonials :any = [
 
 const ReviewCard = ({name, quote, occupation, profilePic, idx} : any)=>{
     return (            
-    <div    
+    <div  key={idx}  
         className=" w-[350px] bg-zinc-950 rounded-2xl "
       >
         <div className=" m-4">
@@ -80,15 +81,22 @@ const ReviewCard = ({name, quote, occupation, profilePic, idx} : any)=>{
       )
 }
 
+const firstRow = testimonials.slice(0, testimonials.length / 2);
+const secondRow = testimonials.slice(testimonials.length / 2);
+
 export default function Reviews() {
   return (
-    <div className=' flex justify-center'>
-        <div className=' grid grid-cols-2 gap-4'>
-        {testimonials.map((review : any, idx : number) => (
-            <ReviewCard key={idx} name={review.name} quote={review.quote}
-            occupation={review.occupation} profilePic={review.profilePic} idx={idx} />
-          ))}
-        </div>
-    </div>
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg  py-20 ">
+    <Marquee pauseOnHover className="[--duration:20s]">
+      {firstRow.map((review : any) => (
+        <ReviewCard key={review.username} {...review} />
+      ))}
+    </Marquee>
+    <Marquee reverse pauseOnHover className="[--duration:20s]">
+      {secondRow.map((review : any) => (
+        <ReviewCard key={review.username} {...review} />
+      ))}
+    </Marquee>
+  </div>
   )
 }

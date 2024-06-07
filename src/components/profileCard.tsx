@@ -54,7 +54,7 @@ export default function ProfileCard() {
                         <span className=" text-4xl font-md mobile:text-xs">{user.email?.slice(0,2).toUpperCase()}</span>
                     </div>
                 </div>
-                    <div className={`${user.plan === 'free' ? 'bg-black' : 'bg-yellow-600'} 
+                    <div className={`${user.plan === 'free' ? 'bg-black' : 'bg-purple-700'} 
                     badge mt-3 p-5 px-14 font-semibold`}>
                         {user.plan === 'free' ? 'Free' : 'Pro'}
                     </div>

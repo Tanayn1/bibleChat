@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { login } from '../actions';
 import { useRouter } from 'next/navigation';
 import { createClient } from '../../../../utils/supabase/client';
+import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'sonner';
 
 export default function LogInForm() {
     const [email, setEmail] = useState<null | string>(null);
@@ -13,15 +15,17 @@ export default function LogInForm() {
     const handleLogin = async  ()=>{
         setIsLoading(true)
         if (email && password) {
-         login(email, password)
-
+         const  {error } =await login(email, password)
+            if (error) {
+                toast.error('Invalid Login Information')
+            }
         } else {
-            alert('Fill Out All Fields')
+            toast.error('Fill Out All Fields')
         }
         setIsLoading(false)
     }
   return (
-    <div className=' border border-gray-100 rounded-xl'>
+    <div className=' border border-zinc-800 rounded-xl'>
         <div className=' m-8'> 
             <h1 className=' text-xl font-bold'>Sign In</h1>
             <p className=' text-xs mt-2'>Sign In to continue</p>
@@ -39,6 +43,12 @@ export default function LogInForm() {
 
                 <div className=' my-3'>
                     <button disabled={isLoading} onClick={handleLogin} className=' btn btn-wide'>Log In</button>
+                    <p className=' text-center text-xs text-gray-300 my-3'>Or</p>
+                    <button className=' btn btn-wide hover:bg-purple-800 bg-purple-700 text-md '><FcGoogle className=' h-6 w-6'/>Google</button>
+                    <div className=' flex justify-center mt-2'>
+                        <p className=' text-xs text-gray-300'>Don't have an account?</p>
+                        <a href='/auth/signup' className=' text-xs font-bold text-purple-700 ml-4'>Sign Up</a>
+                    </div>
                 </div>
             </div>
         </div>

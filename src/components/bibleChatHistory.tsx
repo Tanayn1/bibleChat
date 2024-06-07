@@ -31,6 +31,7 @@ const updateChatSession = async (message : Message)=>{
         .from('chatSessions')
         .insert({
             type: api,
+            api_route: api,
             messages: [...messages,{
                 id: "firstMessage",
                 role: 'user',

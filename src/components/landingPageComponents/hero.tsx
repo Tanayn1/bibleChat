@@ -3,6 +3,8 @@ import Image from 'next/image'
 import React from 'react'
 import TypingAnimation from '../magicui/typingAnimation'
 import FiveStars from '../fivestars'
+import Link from 'next/link'
+import { FcGoogle } from 'react-icons/fc'
 
 export default function Hero() {
   return (
@@ -15,8 +17,10 @@ export default function Hero() {
                 <FiveStars />
                     <div className='flex flex-col items-center mt-4'>
                         <div className=' flex mobile:flex-col'>
-                            <button className='btn bg-purple-700 hover:bg-purple-800 border-purple-700 btn-wide '>Get Started Today!</button>
-                            <button className=' btn btn-wide ml-3 mobile:ml-0 mobile:my-3'>Sign In With Google</button>  
+                            <Link href={'/auth/signup'}>
+                                <button className='btn bg-purple-700 hover:bg-purple-800 border-purple-700 btn-wide '>Get Started Today!</button>
+                            </Link>
+                            <button className=' btn btn-wide ml-3 mobile:ml-0 mobile:my-3'> <FcGoogle className=' h-6 w-6'/>Sign In With Google</button>  
                         </div>
                     </div>
             </div>
