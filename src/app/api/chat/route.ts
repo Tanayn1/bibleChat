@@ -11,10 +11,17 @@ import { JSONLoader } from "langchain/document_loaders/fs/json";
 import { RunnableSequence, RunnablePassthrough } from '@langchain/core/runnables'
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
-import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
-import { createClient } from '../../../../utils/supabase/server';
 import { NextResponse } from 'next/server';
 import { StringOutputParser } from "@langchain/core/output_parsers";
+import { Pinecone } from '@pinecone-database/pinecone';
+import { PineconeStore } from "@langchain/pinecone";
+
+
+
+const pc = new Pinecone({
+ apiKey: process.env.PINECONE_API_KEY!
+});
+const index = pc.index('bible');
 
 
 
@@ -51,7 +58,6 @@ assistant:`;
 
 
 export async function POST(req: Request) {
-    const client = createClient()
     try {
         // Extract the `messages` from the body of the request
         const { messages } = await req.json();
@@ -62,11 +68,9 @@ export async function POST(req: Request) {
         batchSize: 512, // Default value if omitted is 512. Max is 2048
         model: "text-embedding-3-small",
       })
-        const vectorStore = new SupabaseVectorStore(embeddings, {
-            client,
-            tableName: 'documents', 
-            queryName: 'match_documents'
-        })
+        const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
+          pineconeIndex: index
+        });
         const retriever= vectorStore.asRetriever()
         const prompt = PromptTemplate.fromTemplate(TEMPLATE);
         const model = new ChatOpenAI({

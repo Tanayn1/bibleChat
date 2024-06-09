@@ -31,12 +31,12 @@ const client = createClient();
 
                console.log(`Embedding: ${line}, ${bookName} ${indexChapter + 1}:${indexLine + 1}`)
                await SupabaseVectorStore.fromTexts(
-                  [line],
+                  [`${line}, ${bookName} ${indexChapter + 1}:${indexLine + 1}`],
                   {bookName: bookName, chapter: indexChapter + 1, line: indexLine + 1},
                   embeddings,
                   {
                     client,
-                    tableName: 'bible_sections',
+                    tableName: 'documents',
                   }
                 );
 

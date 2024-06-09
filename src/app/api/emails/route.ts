@@ -12,7 +12,7 @@ export async function POST(req: Request, res: Response) {
         const { data: emailListData, error: emailListError} = await supabase
         .from('email_notifications')
         .select('*')
-        .eq('timezone', 'est') 
+        .eq('timezone', 'UTC-6') 
         if (emailListError) return NextResponse.json({status: 400, error: 'Could not fetch emails'});
         if (emailListData.length <= 0) return NextResponse.json({status: 200, response: 'Email List Is Empty'})
         const emailList : any = [];

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import { RiVerifiedBadgeFill } from 'react-icons/ri';
 import { createClient } from '../../utils/supabase/client';
+import { toast } from 'sonner';
 
 export default function PricingModalChat({show} 
   : { show : boolean}) {
@@ -11,6 +12,10 @@ export default function PricingModalChat({show}
   const supabase = createClient();
   const checkout = async ()=>{
     try {
+      if (!selected) {
+        toast.error('Please select a plan')
+        return 
+      }
       setIsLoading(true)
       const {data, error} = await supabase.auth.getUser()
       if (error) return;
@@ -44,7 +49,7 @@ export default function PricingModalChat({show}
     <div className=' fixed inset-0 backdrop-blur-lg flex flex-col lg:justify-center md:justify-center mobile:z-10 mobile:mt-3  items-center '>
       <div className=' flex flex-col bg-zinc-950 rounded-2xl relative '>
         <button className=' absolute top-2 right-2 z-10  btn w-6 h-6' onClick={()=>{
-         
+         toast.error('You have reached your free limits or trying to access a premium feature')
         }}>X</button>
           <div className=' fade-mask-bottom'>
               <Image alt='' 

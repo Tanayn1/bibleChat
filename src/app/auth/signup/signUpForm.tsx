@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { signup } from '../actions';
+import { signUpWithGoogle, signup } from '../actions';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'sonner';
 
@@ -9,7 +9,13 @@ export default function SignUpForm() {
     const [email, setEmail] = useState<null | string>(null);
     const [password, setPassword] = useState<null | string>(null);
     const [confirmPassword, setConfirmPassword] = useState<null | string>(null);
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const handleGoogle = async () => {
+        setIsLoading(true);
+        await signUpWithGoogle();
+        setIsLoading(false)
+    }  
     
     const handleSignUp = ()=>{
         setIsLoading(true)
@@ -53,7 +59,7 @@ export default function SignUpForm() {
                 <div className=' my-3'>
                     <button disabled={isLoading} onClick={handleSignUp} className=' btn btn-wide'>Sign Up</button>
                     <p className=' text-center text-xs text-gray-300 my-3'>Or</p>
-                    <button className=' btn btn-wide hover:bg-purple-800 bg-purple-700 text-md '><FcGoogle className=' h-6 w-6'/>Google</button>
+                    <button disabled={isLoading} onClick={handleGoogle} className=' btn btn-wide hover:bg-purple-800 bg-purple-700 text-md '><FcGoogle className=' h-6 w-6'/>Google</button>
                     <div className=' flex justify-center mt-2'>
                         <p className=' text-xs text-gray-300'>Aldready have an account?</p>
                         <a href='/auth/login' className=' text-xs font-bold text-purple-700 ml-4'>Log In</a>

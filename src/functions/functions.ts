@@ -32,9 +32,12 @@ export async function isPlanFree(supabase : any) {
     .select('*')
     .eq('id', userID);
     if (error) console.log(error);
-    const userPlan = data?.plan;
+    const userPlan = data[0].plan;
+    console.log(data)
+    console.log(userPlan)
     if (userPlan === 'pro') {
         return false;
-    } 
-    return true
+    } else {
+        return true
+    }
 }

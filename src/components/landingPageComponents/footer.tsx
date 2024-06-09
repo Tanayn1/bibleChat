@@ -9,7 +9,7 @@ export default function Footer() {
                 <Image alt='' src={'/v2_white_with_transparent_background (1).png'} height={200} width={200}/>
             </div>
             <div>
-                <h1 className=' text-sm text-gray-300'>© Copyright 2024, All Rights Reserved by Precision Labs</h1>
+                <h1 className=' text-sm text-gray-300'>© Copyright 2024, All Rights Reserved by Holy Harmony</h1>
             </div>
             <div className=' pr-14'>
                 <h1 className=' text-xs text-gray-300'>Contact:</h1>

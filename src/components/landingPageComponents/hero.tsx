@@ -1,12 +1,20 @@
+'use client'
 import WordRotate from '@/components/magicui/wordRotate'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import TypingAnimation from '../magicui/typingAnimation'
 import FiveStars from '../fivestars'
 import Link from 'next/link'
 import { FcGoogle } from 'react-icons/fc'
+import { signUpWithGoogle } from '@/app/auth/actions'
 
 export default function Hero() {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const handleGoogle = async () => {
+        setIsLoading(true);
+        await signUpWithGoogle();
+        setIsLoading(false)
+    }  
   return (
 <div className=' relative  '>
     <div className='flex flex-col  justify-center items-center' >
@@ -20,7 +28,7 @@ export default function Hero() {
                             <Link href={'/auth/signup'}>
                                 <button className='btn bg-purple-700 hover:bg-purple-800 border-purple-700 btn-wide '>Get Started Today!</button>
                             </Link>
-                            <button className=' btn btn-wide ml-3 mobile:ml-0 mobile:my-3'> <FcGoogle className=' h-6 w-6'/>Sign In With Google</button>  
+                            <button disabled={isLoading} onClick={handleGoogle} className=' btn btn-wide ml-3 mobile:ml-0 mobile:my-3'> <FcGoogle className=' h-6 w-6'/>Sign In With Google</button>  
                         </div>
                     </div>
             </div>

@@ -23,6 +23,7 @@ const checkChat = async ()=>{
     setChatCheck(true)
 }
 const updateChatSession = async (message : Message)=>{
+    
     if (chatSessionID === null) {
         console.log(input)
         const {data, error} : any = await supabase

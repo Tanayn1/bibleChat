@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import { RiVerifiedBadgeFill } from 'react-icons/ri';
 import { createClient } from '../../utils/supabase/client';
+import { toast } from 'sonner';
 
 export default function PricingModal({setIsShow , show} 
   : {setIsShow : Function, show : boolean}) {
@@ -11,6 +12,10 @@ export default function PricingModal({setIsShow , show}
   const supabase = createClient();
   const checkout = async ()=>{
     try {
+      if (!selected) {
+        toast.error('Please select a plan')
+        return 
+      }
       setIsLoading(true)
       const {data, error} = await supabase.auth.getUser()
       if (error) return;

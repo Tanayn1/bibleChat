@@ -14,8 +14,7 @@ export async function login(email : string, password : string) {
     return { error: 'Invalid Login'}
   }
 
-  revalidatePath('/dashboard', 'layout')
-  redirect('/dashboard')
+  return { error: null }
 }
 
 export async function signup(name : string, email : string, password : string, confirmPassword : string ) {
@@ -52,28 +51,26 @@ export async function signup(name : string, email : string, password : string, c
  }
 }
 
-export async function signInWithGoogle() {
-  const supabase = createClient()
 
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
-    options: {
-      redirectTo:'/dashboard'
-    }
-  })
-}
 
 export async function signUpWithGoogle() {
   const supabase = createClient()
 
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  const {data , error} = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo:'/auth/onboarding'
+      redirectTo:`http://localhost:3000/auth/callback`,
+      
     }
   })
 
+ if (error) {
+   console.log(error)
+   return {error: 'Internal Server Error'}
+ }
+ console.log(data)
   if (data) {
-
+    console.log(data)
+    redirect(data.url)
   }
 }
