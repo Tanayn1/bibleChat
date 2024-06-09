@@ -37,9 +37,9 @@ export default function ChatHistory() {
     <div className=' bg-zinc-950 w-[400px] h-[600px] rounded-xl mobile:h-[500px] mobile:w-[360px]'>
         <h1 className=' text-2xl font-semibold m-3'>Chat History</h1>
         <div className=' h-500px overflow-auto no-scrollbar'>
-            {chats ? chats.map((chat)=>{
+            {chats ? chats.map((chat, index)=>{
                 return (
-                <div className=' cursor-pointer bg-zinc-900 rounded-xl hover:bg-zinc-800 m-3 mx-5' 
+                <div key={index} className=' cursor-pointer bg-zinc-900 rounded-xl hover:bg-zinc-800 m-3 mx-5' 
                 onClick={()=>{router.push(`/dashboard/chatHistory/${chat.id}`)}}>
                     <div className=' m-3'>
                         <div className=' p-1 h-[25px] overflow-hidden'>

@@ -35,7 +35,7 @@ export default function Hero() {
         <div className=' rounded-xl fade-mask-bottom mobile:w-[300px] mb-24'>
             <Image className=' rounded-xl opacity-50' alt='' src={'/holyharmonybackgroundimage.png'} height={800} width={800}/>
             <div className=' absolute top-0 mt-36 mobile:mt-7 left-0 right-0 flex flex-col items-center z-10'>
-                    <h1 className=' font-serif text-md  mobile:text-xs w-[400px] mobile:w-[200px] text-center'>"Search for them as you would for silver; seek them like hidden treasures. Then you will understand what it means to fear the Lord, and you will gain knowledge of God."</h1>
+                    <h1 className=' font-serif text-md  mobile:text-xs w-[400px] mobile:w-[200px] text-center'>&quot;Search for them as you would for silver; seek them like hidden treasures. Then you will understand what it means to fear the Lord, and you will gain knowledge of God.&quot;</h1>
                     <h1 className=' font-semibold text-xl my-3 w-[400px] text-center'>Proverbs 2:4-5</h1>
             </div>
         </div>

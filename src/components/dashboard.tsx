@@ -46,7 +46,7 @@ export default function Dashboard() {
                 </div>
                 <div className=' absolute bottom-0 left-0 right-0 flex flex-col items-center'>
                     <h1 className=' text-sm font-bold '>Verse Of The Day:</h1>
-                    <h1 className=' font-serif text-lg mobile:text-xs w-[400px] mobile:w-[200px] text-center'>"Blessed are the peacemakers, for they will be called children of God."</h1>
+                    <h1 className=' font-serif text-lg mobile:text-xs w-[400px] mobile:w-[200px] text-center'>&quot;Blessed are the peacemakers, for they will be called children of God.&quot;</h1>
                     <h1 className=' font-semibold text-xl my-3 w-[400px] text-center'>Mathew 5:9</h1>
                 </div>
             </div>
