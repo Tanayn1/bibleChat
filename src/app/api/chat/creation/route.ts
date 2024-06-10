@@ -45,7 +45,7 @@ const CONDENSE_QUESTION_PROMPT = PromptTemplate.fromTemplate(
 condenseQuestionTemplate
 );
 
-const TEMPLATE = `Answer the user's questions based on the bible verse that is provided, 
+const TEMPLATE = `The Topic of this conversation is about creation, Answer the user's questions (which are about creation) based on the bible verse that is provided (if there is one), 
 state the bible passage and explain it whilist answering the users question as well as 
 keeping answers very concise and straight to the point.:
 ==============================
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
       const prompt = PromptTemplate.fromTemplate(TEMPLATE);
       const model = new ChatOpenAI({
           apiKey: process.env.OPENAI_API_KEY!,
-          model: 'gpt-4o',
+          model: 'gpt-3.5-turbo-0125',
           temperature: 0,
           streaming: true,
           verbose: true,
@@ -104,7 +104,11 @@ export async function POST(req: Request) {
 
         const answerChain = RunnableSequence.from([
           {
-            context: retriever.pipe(formatDocumentsAsString),
+            context:  async () => {
+              const queryResults = await retriever._getRelevantDocuments(currentMessageContent);
+              console.log(queryResults.map(result => `${result.metadata.verse} ${result.metadata.bookName} ${result.metadata.chapter}:${result.metadata.line} `).join("\n\n"))
+              return queryResults.map(result => `${result.metadata.verse} ${result.metadata.bookName} ${result.metadata.chapter}:${result.metadata.line} `).join("\n\n");
+            },
             question: new RunnablePassthrough(),
 
           },

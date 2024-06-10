@@ -15,7 +15,7 @@ const testimonials :any = [
         "A must-have for every Christian! Holy Harmony has deepened my faith and provided answers to my spiritual questions instantly.",
       name: "",
       occupation: '',
-      profilePic: '/139829295_485163762474597_3857552590533108128_n.jpg'
+      profilePic: '/44884218_345707102882519_2446069589734326272_n.jpg'
   
     },
     {

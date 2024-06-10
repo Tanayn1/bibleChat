@@ -16,7 +16,7 @@ export default function Hero() {
         setIsLoading(false)
     }  
   return (
-<div className=' relative  '>
+<div className=' relative py-40 '>
     <div className='flex flex-col  justify-center items-center' >
             <div className=' flex flex-col items-center m-10'>
                 <h1 className=' text-4xl text-center font-semibold'>Strengthen Your Faith</h1>
@@ -39,10 +39,11 @@ export default function Hero() {
                     <h1 className=' font-semibold text-xl my-3 w-[400px] text-center'>Proverbs 2:4-5</h1>
             </div>
         </div>
-    </div>
+        </div>
     <div>
 
     </div>
+    <Image className='-z-50' alt='' src={'/bg2.png'} fill/>
 </div>
   )
 }

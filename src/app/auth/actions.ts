@@ -56,10 +56,10 @@ export async function signup(name : string, email : string, password : string, c
 export async function signUpWithGoogle() {
   const supabase = createClient()
 
-  const {data , error} = await supabase.auth.signInWithOAuth({
+  const { data , error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo:`http://localhost:3000/auth/callback`,
+      redirectTo:`https://holy-harmony.vercel.app/auth/callback`,
       
     }
   })

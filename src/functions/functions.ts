@@ -6,7 +6,7 @@ export async function checkChatNum(supabase : any) {
     .select('*')
     .eq('id', userID);
     if (error) console.log(error);
-    const userPlan = data?.plan;
+    const userPlan = data[0]?.plan;
     if (userPlan === 'pro') {
         return false;
     } else {

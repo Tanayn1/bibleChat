@@ -15,6 +15,8 @@ import { NextResponse } from 'next/server';
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { Pinecone } from '@pinecone-database/pinecone';
 import { PineconeStore } from "@langchain/pinecone";
+import { createRetrievalChain } from "langchain/chains/retrieval";
+
 
 
 
@@ -71,11 +73,13 @@ export async function POST(req: Request) {
         const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
           pineconeIndex: index
         });
-        const retriever= vectorStore.asRetriever()
+        const retriever= vectorStore.asRetriever();
+        console.log("Retriever initialized:", retriever);
+
         const prompt = PromptTemplate.fromTemplate(TEMPLATE);
         const model = new ChatOpenAI({
             apiKey: process.env.OPENAI_API_KEY!,
-            model: 'gpt-4o',
+            model: 'gpt-3.5-turbo-0125',
             temperature: 0,
             streaming: true,
             verbose: true,
@@ -104,7 +108,11 @@ export async function POST(req: Request) {
 
           const answerChain = RunnableSequence.from([
             {
-              context: retriever.pipe(formatDocumentsAsString),
+              context:  async () => {
+                const queryResults = await retriever._getRelevantDocuments(currentMessageContent);
+                console.log(queryResults.map(result => `${result.metadata.verse} ${result.metadata.bookName} ${result.metadata.chapter}:${result.metadata.line} `).join("\n\n"))
+                return queryResults.map(result => `${result.metadata.verse} ${result.metadata.bookName} ${result.metadata.chapter}:${result.metadata.line} `).join("\n\n");
+              },
               question: new RunnablePassthrough(),
 
             },
