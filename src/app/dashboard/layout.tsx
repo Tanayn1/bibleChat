@@ -18,7 +18,9 @@ export default function DashboardLayout({
         const { data, error } = await supabase.auth.getUser()
         if (error || !data?.user) {
           router.push('/auth/login')
-        }
+          return;
+        } 
+
     }
     useEffect(()=>{
         checkUser();

@@ -43,7 +43,7 @@ export default function Hero() {
     <div>
 
     </div>
-    <Image className='-z-50' alt='' src={'/bg2.png'} fill/>
+    <Image className='-z-50' alt='' src={'/bible_picture_open_darkened_v3.png'} fill/>
 </div>
   )
 }

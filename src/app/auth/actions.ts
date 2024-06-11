@@ -2,6 +2,7 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { createClient } from '../../../utils/supabase/server'
+import { serviceSupabase } from '../../../utils/supabase/service'
 
 export async function login(email : string, password : string) {
   const supabase = createClient();
@@ -44,8 +45,7 @@ export async function signup(name : string, email : string, password : string, c
   });
   console.log(response.data);
   console.log(response.error);
-  revalidatePath('/dashboard', 'layout')
-  redirect('/dashboard')
+  redirect('/auth/signup/verifyEmail')
  } else {
     alert('passwords do not match')
  }
