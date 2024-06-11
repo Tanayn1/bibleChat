@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
     })
     if (!error) {
       redirectTo.searchParams.delete('next')
-      return NextResponse.redirect(`${origin}/dashboard`)
+      return NextResponse.redirect(`${origin}/auth/onboarding`)
     }
   }
 

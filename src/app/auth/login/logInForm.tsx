@@ -15,7 +15,6 @@ export default function LogInForm() {
     const handleGoogle = async () => {
         setIsLoading(true);
         await signUpWithGoogle();
-        setIsLoading(false)
     }  
 
     const handleLogin = async  ()=>{
@@ -33,7 +32,6 @@ export default function LogInForm() {
             return;
         }
         router.push('/dashboard')
-        setIsLoading(false)
     }
   return (
     <div className=' border border-zinc-800 rounded-xl'>

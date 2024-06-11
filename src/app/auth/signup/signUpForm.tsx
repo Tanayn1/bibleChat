@@ -24,11 +24,13 @@ export default function SignUpForm() {
                 signup(name, email, password, confirmPassword)
             } else {
                 toast.error('Passwords Must Match')
+                setIsLoading(false)
             }
         } else {
             toast.error('Fill out all fields')
+            setIsLoading(false)
+
         }
-        setIsLoading(false)
     }
   return (
     <div className=' border border-zinc-700 rounded-xl mx-4'>
@@ -57,7 +59,7 @@ export default function SignUpForm() {
                     type='password' placeholder='Confirm Password' className=' input input-bordered'/>
                 </div>
                 <div className=' my-3'>
-                    <button disabled={isLoading} onClick={handleSignUp} className=' btn btn-wide'>{isLoading ? <div className=' loading loading-dots loading-sm'></div>  :  'Sign Up'}</button>
+                    <button disabled={isLoading} onClick={handleSignUp} className=' btn btn-wide'>{isLoading ? <div className=' loading loading-dots'></div>:  'Sign Up'}</button>
                     <p className=' text-center text-xs text-gray-300 my-3'>Or</p>
                     <button disabled={isLoading} onClick={handleGoogle} className=' btn btn-wide hover:bg-purple-800 bg-purple-700 text-md '><FcGoogle className=' h-6 w-6'/>Google</button>
                     <div className=' flex justify-center mt-2'>
