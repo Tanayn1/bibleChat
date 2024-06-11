@@ -40,12 +40,6 @@ export default function SideNav() {
                         Bible Quiz
                     </a>
                 </li>
-                <li >
-                    <a>
-                        <BiPencil className=' h-6 w-6'/>
-                        Study Plan
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
