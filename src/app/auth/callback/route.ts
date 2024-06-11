@@ -38,7 +38,7 @@ export async function GET(request: Request) {
       .eq('id', userID)
       console.log(queryUserData)
       if (queryUserData?.length !== 0) {
-        return NextResponse.redirect(`${origin}/dashboard`)
+        return NextResponse.redirect(`${process.env.NEXT_PUBLIC_DOMAIN}/dashboard`)
       }
       const { data: userData, error: userError } = await supabase
       .from('users')
