@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RiVerifiedBadgeFill } from 'react-icons/ri';
 import { createClient } from '../../utils/supabase/client';
 import { toast } from 'sonner';
@@ -45,6 +45,10 @@ export default function PricingModal({setIsShow , show}
       setIsLoading(false)
     }    
   }
+  useEffect(()=>{
+    console.log(process.env.NEXT_PUBLIC_PRICE_ID_WEEKLY, process.env.NEXT_PUBLIC_PRICE_ID_MONTHLY, process.env.NEXT_PUBLIC_PRICE_ID_YEARLY )
+  },[])
+
   if (show) {return (
     <div className=' fixed inset-0 backdrop-blur-lg flex flex-col lg:justify-center md:justify-center mobile:z-10 mobile:mt-3 items-center'>
       <div className=' flex flex-col bg-zinc-950 rounded-2xl relative '>
