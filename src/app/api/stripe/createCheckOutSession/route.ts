@@ -20,7 +20,7 @@ export async function POST(req: Request, res : Response) {
             subscription_data: {
                 trial_period_days: 3
             },
-            success_url: 'http://localhost:3000/dashboard'
+            success_url: `${process.env.NEXT_PUBLIC_DOMAIN}/dashboard`
         });
 
         return NextResponse.json(checkout.url)
