@@ -37,7 +37,7 @@ export default function QuizStats() {
     <div className=' m-6'>
         <div className=' bg-zinc-950 flex flex-col rounded-2xl'>
                 <div className=' m-8'>
-                <h1 className=' text-lg font-semibold'>Previous Quizes</h1>
+                <h1 className=' text-lg font-semibold'>Previous Quizzes</h1>
                 <p className=' text-xs mt-2'>View your previous quiz results</p>
                 <div className=' h-[300px] overflow-auto no-scrollbar'>
                     {stats ? stats.map((stat, index)=>{
