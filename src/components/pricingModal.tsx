@@ -76,14 +76,14 @@ export default function PricingModal({setIsShow , show}
           <div className=''>
             <h1 className=' text-center text-gray-300 text-xs'>Choose Plan</h1>
             <div className=' flex justify-between my-4'>
-              <div onClick={()=>{setSelected('price_1PNl70K0RW804ljs9NlHYxoC')}} className={`${selected === 'price_1PNl70K0RW804ljs9NlHYxoC' ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer flex flex-col items-center ml-8  rounded-xl hover:bg-zinc-800`}>
+              <div onClick={()=>{setSelected(process.env.NEXT_PUBLIC_PRICE_ID_WEEKLY!)}} className={`${selected === process.env.NEXT_PUBLIC_PRICE_ID_WEEKLY! ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer flex flex-col items-center ml-8  rounded-xl hover:bg-zinc-800`}>
                 <div className=' p-4'>
                   <h1 className=' text-md font-semibold text-center'>$4.99</h1>
                   <h1 className=' text-md font-semibold'>Per Week</h1>
                   <h1 className=' text-xs mt-6'>$4.99 per week</h1>
                 </div>
               </div>
-              <div onClick={()=>{setSelected('price_1PNl70K0RW804ljsTzwBHAHo')}} className={`${selected === 'price_1PNl70K0RW804ljsTzwBHAHo' ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer flex flex-col items-center  rounded-xl hover:bg-zinc-800`}>
+              <div onClick={()=>{setSelected(process.env.NEXT_PUBLIC_PRICE_ID_MONTHLY!)}} className={`${selected === process.env.NEXT_PUBLIC_PRICE_ID_MONTHLY! ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer flex flex-col items-center  rounded-xl hover:bg-zinc-800`}>
                 <div className=' p-4'>
                   <h1 className=' text-md font-semibold text-center'>$12.99</h1>
                   <h1 className=' text-md font-semibold'>Per Month</h1>
@@ -91,7 +91,7 @@ export default function PricingModal({setIsShow , show}
                   <h1 className=' text-xs '>$2.99 per week</h1>
                 </div>
               </div>
-                <div onClick={()=>{setSelected('price_1PNl70K0RW804ljsdujYNcEW')}} className={` ${selected === 'price_1PNl70K0RW804ljsdujYNcEW' ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer border-4 border-purple-700 flex flex-col items-center mr-7  rounded-xl hover:bg-zinc-800`}>
+                <div onClick={()=>{setSelected(process.env.NEXT_PUBLIC_PRICE_ID_YEARLY!)}} className={` ${selected === process.env.NEXT_PUBLIC_PRICE_ID_YEARLY! ? 'bg-zinc-700' : 'bg-zinc-900'} cursor-pointer border-4 border-purple-700 flex flex-col items-center mr-7  rounded-xl hover:bg-zinc-800`}>
                   <div className=' p-4'>
                     <h1 className=' text-md font-semibold text-center'>$59.99</h1>
                     <h1 className=' text-md font-semibold text-center'>Per Year</h1>
