@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '2xs': '0.5rem'
+      },
       screens: {
         "mobile": {'min': '360px', 'max': '800px'},
         "sm" : {'min': '800px', 'max': '1300px'}
