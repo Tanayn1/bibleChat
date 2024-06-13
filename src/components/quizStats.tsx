@@ -23,7 +23,8 @@ export default function QuizStats() {
                 quizID: obj.id,
                 score: obj.score,
                 createdAt: time,
-                questions: obj.questions
+                questions: obj.questions,
+                difficulty: obj.difficulty
             })
         });
         console.log(array);
@@ -47,7 +48,8 @@ export default function QuizStats() {
                                 <h1>Date:</h1>
                                 <div className=' flex items-center justify-between'>
                                     <h1 className=' text-xs text-gray-300 m-1'>{stat.createdAt}</h1>
-                                    <h1 className=' text-xs text-gray-300 ml-5 '>Score: {stat.score}/7</h1>  
+                                    <h1 className=' text-xs text-gray-300 ml-5 '>Score: {stat.score}/7</h1>
+                                    <h1 className=' text-xs text-gray-300 ml-5 '>Difficulty: {stat.difficulty}</h1>
                                 </div>
                             </div>
                         </div>

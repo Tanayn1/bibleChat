@@ -6,7 +6,7 @@ import QuizQuestion from './quizQuestion';
 import { DiVim } from 'react-icons/di';
 import QuizEnd from './quizEnd';
 
-export default function SingleChoiceQuiz() {
+export default function SingleChoiceQuiz({ diff } : {diff : string}) {
 const supabase = createClient();
 const [questions, setQuestions] = useState<null | Array<any>>(null);
 const [currentQuestion, setCurrentQuestion] = useState<any>(null);
@@ -17,7 +17,7 @@ const [answers, setAnswers] = useState<Array<any>>([])
 const fetchQuestions = async ()=>{
 try {
   let { data: questions, error, count } = await supabase
-  .from('singleChoiceQuestions')
+  .from(diff) //update this to diff
   .select('*', { count: 'exact' });
 
 console.log(questions)
@@ -80,7 +80,7 @@ const selectedQuestions = shuffledQuestions.slice(0, 7);
         choiceA={currentQuestion.choiceA} choiceB={currentQuestion.choiceB} 
         choiceC={currentQuestion.choiceC} choiceD={currentQuestion.choiceD} 
         correct={currentQuestion.correctAnswer} setAnswer={(value : any)=>{updateAnswer(value)}} setCorrect={(value : number)=>{handleQuestionChange(value)}}/> : 
-        <QuizEnd score={score} questions={questions} answers={answers}/> }
+        <QuizEnd diff={diff} score={score} questions={questions} answers={answers}/> }
       </div>
     </div>
   )} 

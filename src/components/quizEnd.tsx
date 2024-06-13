@@ -5,8 +5,8 @@ import { TiTick } from 'react-icons/ti'
 import { createClient } from '../../utils/supabase/client'
 import { useRouter } from 'next/navigation'
 
-export default function QuizEnd({ score, questions, answers } : 
-    { score: number, questions : any, answers : Array<any> }) {
+export default function QuizEnd({ score, questions, answers, diff} : 
+    { score: number, questions : any, answers : Array<any>, diff : string }) {
   const supabase = createClient();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
@@ -17,12 +17,15 @@ export default function QuizEnd({ score, questions, answers } :
         array.push({
             question: question.question,
             correctAnswer: question.correctAnswer,
-            choice: answers[index].choice
+            choice: answers[index].choice,
         });
     })
+    console.log(array)
     const {data, error} = await supabase.from('userScores').insert({
         score: score,
         questions: array,
+        difficulty: diff === 'easy_questions' ? 'Easy' : diff === 'medium_questions' ? 'Medium' : 'Hard' ,
+
     });
 
     if (error) {
