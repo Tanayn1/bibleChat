@@ -33,13 +33,8 @@ export default function TypingAnimation({
   }, [duration, i]);
 
   return (
-    <h1
-      className={cn(
-        "font-display text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
-        className,
-      )}
-    >
-      {displayedText ? displayedText : text}
-    </h1>
+    <h1 className={cn("text-3xl sm:text-2xl mobile:text-xl whitespace-nowrap", className)}>
+  {displayedText ? displayedText : text}
+  </h1>
   );
 }

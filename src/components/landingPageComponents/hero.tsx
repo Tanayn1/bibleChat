@@ -16,12 +16,12 @@ export default function Hero() {
         setIsLoading(false)
     }  
   return (
-<div className=' relative py-40 '>
+<div className=' relative py-40 w-full max-w-screen-lg mx-auto px-4'>
     <div className='flex flex-col  justify-center items-center' >
             <div className=' flex flex-col items-center m-10'>
-                <h1 className=' text-4xl text-center font-semibold'>Strengthen Your Faith</h1>
-                <h1 className=' text-3xl text-center font-semibold flex items-center '>One<span className='text-4xl text-purple-700 mx-2'><TypingAnimation text='Conversation' /></span>at a Time</h1>
-                <h1 className=' text-sm text-gray-300 my-3'>#1 App For Bible Study</h1>
+                <h1 className=' text-4xl text-center font-semibold'>Grow Your <span className='text-4xl text-purple-700 mx-2'>Faith</span> Daily</h1>
+                {/* <h1 className=' text-3xl text-center font-semibold flex flex-wrap justify-center'>One<span className='text-4xl text-purple-700 mx-2'><TypingAnimation text='Conversation' /></span>at a Time</h1> */}
+                <h1 className=' text-sm text-gray-300 my-3'>#1 Website For Bible Study</h1>
                 <FiveStars />
                     <div className='flex flex-col items-center mt-4'>
                         <div className=' flex mobile:flex-col'>
