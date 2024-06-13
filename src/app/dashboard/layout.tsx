@@ -32,13 +32,14 @@ export default function DashboardLayout({
       <div className=' lg:hidden md:hidden fixed top-0'>
       </div>
       <SideNav/>
-      <MobileSidebar/>
+     
       <div className=' lg:ml-56 md:ml-56 w-full '>
         {children}
       </div>
       <div className=' fixed top-0 right-0'>
         <AvatarDropdown/>
       </div>
+      <BottomNav/>
     </div>
   )
 }
