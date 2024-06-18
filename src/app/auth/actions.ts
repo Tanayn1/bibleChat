@@ -45,7 +45,7 @@ export async function signup(name : string, email : string, password : string, c
   });
   console.log(response.data);
   console.log(response.error);
-  redirect('/auth/signup/verifyEmail')
+  redirect('/dashboard')
  } else {
     alert('passwords do not match')
  }
